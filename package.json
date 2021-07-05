@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "@hapi/hapi": "^20.1.5",
+    "blueimp-md5": "^2.18.0"
+  },
+  "name": "MD5",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node back/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

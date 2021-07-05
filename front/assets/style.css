@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto:wght@100&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue',
+    Arial, sans-serif;
+    background: #212121;
+}
+
+.container{
+    width: 70%;
+    margin: 0 auto;
+}
+
+.desc{
+    padding-top: 30px;
+}
+
+.desc h1{
+    font-size: 48px;
+    color: #DEDEDE;
+}
+
+.desc p{
+    padding-top: 20px;
+    font-size: 18px;
+    color:#DEDEDE;
+}
+
+.input{
+    padding-top: 20px;
+    font-size: 24px;
+}
+
+.input label{
+    color: white;
+}
+
+textarea{
+    width: 100%;
+    height: 250px;
+    background-color: #414141;
+    border: none;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.calculate{
+    padding: 10px 15px;
+    background-color: #5C9036;
+    border: none;
+    color: #DEDEDE;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.reset{
+    background-color: #CC892A;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 18px;
+}
+
+.results{
+    margin-top: 20px;
+}
+
+.results label{
+    font-size: 24px;
+    color: #DEDEDE;
+}
+
+.results .result{
+    margin-top: 10px;
+    width: 100%;
+    font-size: 18px;
+    background: #414141;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 0px;
+}
