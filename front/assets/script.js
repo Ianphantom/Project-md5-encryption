@@ -1,23 +1,15 @@
 const url = "http://localhost:5000/md5"
 let inputUser = document.querySelector(".inputUser");
 let calculate = document.querySelector(".calculate");
+let reset = document.querySelector(".reset");
 let resultData = document.querySelector(".result");
 
 calculate.addEventListener('click', getEncryption);
+reset.addEventListener('click', empty);
 
 var myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
 
-var raw = JSON.stringify({
-  "input": "NamaSayaIan"
-});
-
-var requestOptions = {
-  method: 'POST',
-  headers: myHeaders,
-  body: raw,
-  redirect: 'follow'
-};
 
 function status(response) {
     if (response.status !== 200) {
@@ -36,7 +28,12 @@ function error(error) {
 
 const fetchAPI = (url, data) => {
     let send = {input : data};
-    return fetch("http://6408ebac5833.ngrok.io/md5", requestOptions)
+    return fetch("http://6408ebac5833.ngrok.io/md5", {
+        method: 'POST',
+        headers: myHeaders,
+        body: JSON.stringify(send),
+        redirect: 'follow'
+    })
         .then(status)
         .then(json)
         .catch(error)
@@ -46,7 +43,7 @@ function getEncryption(event){
     event.preventDefault();
     let data = inputUser.value;
     console.log(data);
-    fetchAPI("/md5","NamaSayaIan")
+    fetchAPI("/md5", data)
     .then(result => {
         showResult(result);
     })
@@ -56,25 +53,11 @@ function getEncryption(event){
 }
 
 function showResult(result){
-    console.log(result);
-    // resultData.value =Nama result.data;
+    // console.log(result);
+    resultData.value =result.data.data;
 }
 
-// var myHeaders = new Headers();
-// myHeaders.append("Content-Type", "application/json");
-
-// var raw = JSON.stringify({
-//   "input": "NamaSayaIan"
-// });
-
-// var requestOptions = {
-//   method: 'POST',
-//   headers: myHeaders,
-//   body: raw,
-//   redirect: 'follow'
-// };
-
-// fetch("http://192.168.100.136:5000/md5", requestOptions)
-//   .then(response => response.text())
-//   .then(result => console.log(result))
-//   .catch(error => console.log('error', error));
+function empty(event){
+    resultData.value= "";
+    inputUser.value="";
+}
