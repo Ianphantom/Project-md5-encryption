@@ -16,8 +16,7 @@ var requestOptions = {
   method: 'POST',
   headers: myHeaders,
   body: raw,
-  redirect: 'follow',
-  mode: 'cors'
+  redirect: 'follow'
 };
 
 function status(response) {
@@ -37,7 +36,7 @@ function error(error) {
 
 const fetchAPI = (url, data) => {
     let send = {input : data};
-    return fetch("http://localhost:5500/md5", requestOptions)
+    return fetch("http://6408ebac5833.ngrok.io/md5", requestOptions)
         .then(status)
         .then(json)
         .catch(error)
